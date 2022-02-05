@@ -20,15 +20,15 @@ public class MainCommand extends Command {
     private final SubCommandManager subCommandManager;
 
     public MainCommand(BetterEconomy instance) {
-        super(instance.getName().toLowerCase(Locale.ROOT), "Main Command", "/" + instance.getName().toLowerCase(Locale.ROOT), Collections.singletonList("eco"));
+        super(instance.getName().toLowerCase(Locale.ROOT), "Main Command", "/" + instance.getName().toLowerCase(Locale.ROOT), Collections.singletonList("bc"));
         this.subCommandManager = new SubCommandManager() {
             @Override
             public void sendHelpMessage(@NotNull CommandSender sender, @NotNull String label, @NotNull String... args) {
                 if (sender.hasPermission(Permissions.ADMIN)) {
                     subcommands.forEach((subLabel, subCommand) -> MessageUtils.sendMessage(sender, formatCommand(label + " " + subLabel, subCommand.getDescription())));
                 }
-                MessageUtils.sendMessage(sender, formatCommand("balancetop", "Show the balance top"));
-                MessageUtils.sendMessage(sender, formatCommand("balance", "Get the balance of a player"));
+                MessageUtils.sendMessage(sender, formatCommand("dogetop", "Show the balance top"));
+                MessageUtils.sendMessage(sender, formatCommand("doge", "Get the balance of a player"));
             }
 
             private String formatCommand(String command, String description) {
