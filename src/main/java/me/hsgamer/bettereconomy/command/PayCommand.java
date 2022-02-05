@@ -20,7 +20,7 @@ public class PayCommand extends Command {
     private final BetterEconomy instance;
 
     public PayCommand(BetterEconomy instance) {
-        super("pay", "Transfer money to the player", "/pay <player> <amount>", Collections.emptyList());
+        super("dogepay", "Transfer money to the player", "/dogepay <player> <amount>", Collections.emptyList());
         this.instance = instance;
         setPermission(Permissions.PAY.getName());
     }
